@@ -1,7 +1,7 @@
 [
   {
     "bookSourceGroup": "小说",
-    "bookSourceName": "冷冷文学（3.26结构修订）",
+    "bookSourceName": "冷冷文学（参考可用源改制）",
     "bookSourceType": 0,
     "bookSourceUrl": "https://www.8leng.com/",
     "customButton": false,
@@ -14,34 +14,39 @@
     "lastUpdateTime": 0,
     "respondTime": 0,
     "ruleBookInfo": {
-      "name": "h1@text||title@text",
-      "author": "a[href*='/writer/']@text",
-      "coverUrl": "img@src",
-      "intro": "text.内容简介@text||id.intro@text||class.intro@text",
-      "kind": "",
-      "lastChapter": "a[href*='/book/']@text",
-      "tocUrl": "a[href$='/catalog/']@href"
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:description\"]@content",
+      "kind": "[property=\"og:novel:status\"]@content",
+      "lastChapter": "[property=\"og:novel:latest_chapter_name\"]@content",
+      "name": ".BGsectionOne-top@.title@text",
+      "tocUrl": "text.查看全部章节@href"
     },
     "ruleContent": {
-      "content": "id.content@textNodes||class.content@textNodes||id.chaptercontent@textNodes"
+      "content": "@js:\nfunction d(a, b) {\n b = java.md5Encode(b);\n var d = b.substring(0, 16);\n var e = b.substring(16);\n return java.createSymmetricCrypto(\"AES/CBC/PKCS7Padding\", e, d).decryptStr(a);\n}\ndecryptFunc = d;\neval(result.match(/((?:decryptFunc|d)\\(\"[\\s\\S]+?\"\\))\\)?;?/)[1])"
     },
-    "ruleExplore": {},
+    "ruleExplore": {
+      "author": "a.2@text",
+      "bookList": ".CGsectionTwo-right-content-unit",
+      "bookUrl": "a@href",
+      "intro": "p.-2@text##标签.*",
+      "lastChapter": "p.-1@text",
+      "name": "a.0@text"
+    },
     "ruleSearch": {
-      "bookList": "a[href*='/book/']:has(img), a[href*='/book/']",
-      "name": "a[href*='/book/']@text",
-      "author": "a[href*='/writer/']@text",
-      "bookUrl": "a[href*='/book/']@href",
-      "coverUrl": "img@src",
-      "intro": "",
-      "kind": ""
+      "author": "span.-1@text",
+      "bookList": ".SHsectionThree-middle@p",
+      "bookUrl": "span.-2@a@href",
+      "name": "span.-2@a@text"
     },
     "ruleToc": {
-      "chapterList": "a[href*='/book/'][href$='.html']:not([href*='/catalog/'])",
-      "chapterName": "text",
-      "chapterUrl": "href",
-      "nextTocUrl": "a:contains(上一页)@href"
+      "chapterList": "class.BCsectionTwo-top-chapter@li\n<js>\nlist = result.toArray();\ns = /originalOrder = .*?;/.test(src)?eval(src.match(/originalOrder = (.*?);/)[1]):result;\nl = [];\nif(/<li.*?\"\\d+\" .*?-[^\"]+=\"\\d+\">/.test(result)){\n num = String(result).match(/<li.*?\"\\d+\" (.*?-[^\"]+)=\"\\d+\">/)[1];\n l = list.sort((a,b)=>a.attr(num)-b.attr(num));\n} else { for(i in list){ l[s[i]] = list[i]; } }\nl.join(\"\")\n</js>\ntag.a",
+      "chapterName": "<js>\ntry{\nresult = String(result);\n!/\\.html/.test(result)?result.match(/class=\"g\".*?=\"[a-zA-Z\\d\\+=\\/]{30,}?\" .*?=\"(.*?)\"/)[1]:java.getString(\"@@data-real||text\");\n}catch(e){result = java.getString(\"@@data-real||text\");}\n</js>",
+      "chapterUrl": "@href\n<js>\ntry {\nlet re = /class=\"g\" .*?=\"([a-zA-Z\\d\\+=\\/]{30,})\"/;\nresult = /\\.html/.test(result) ? result : java.base64Decode(String(src).match(re)[1]);\n} catch(e) {}\n</js>",
+      "nextTocUrl": "text.下一页@href"
     },
-    "searchUrl": "https://www.8leng.com/search/{{key}}",
-    "weight": 0
+    "searchUrl": "/search/{{key}}/{{page}}",
+    "weight": 0,
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36\"\n}"
   }
 ]
