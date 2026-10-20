@@ -1,0 +1,47 @@
+[
+  {
+    "bookSourceGroup": "小说",
+    "bookSourceName": "冷冷文学（3.26结构修订）",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.8leng.com/",
+    "customButton": false,
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "",
+    "lastUpdateTime": 0,
+    "respondTime": 0,
+    "ruleBookInfo": {
+      "name": "h1@text||title@text",
+      "author": "a[href*='/writer/']@text",
+      "coverUrl": "img@src",
+      "intro": "text.内容简介@text||id.intro@text||class.intro@text",
+      "kind": "",
+      "lastChapter": "a[href*='/book/']@text",
+      "tocUrl": "a[href$='/catalog/']@href"
+    },
+    "ruleContent": {
+      "content": "id.content@textNodes||class.content@textNodes||id.chaptercontent@textNodes"
+    },
+    "ruleExplore": {},
+    "ruleSearch": {
+      "bookList": "a[href*='/book/']:has(img), a[href*='/book/']",
+      "name": "a[href*='/book/']@text",
+      "author": "a[href*='/writer/']@text",
+      "bookUrl": "a[href*='/book/']@href",
+      "coverUrl": "img@src",
+      "intro": "",
+      "kind": ""
+    },
+    "ruleToc": {
+      "chapterList": "a[href*='/book/'][href$='.html']",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "text.下一页@href"
+    },
+    "searchUrl": "https://www.8leng.com/search/{{key}}",
+    "weight": 0
+  }
+]
