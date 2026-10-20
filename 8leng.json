@@ -36,10 +36,10 @@
       "kind": ""
     },
     "ruleToc": {
-      "chapterList": "a[href*='.html']",
+      "chapterList": "a[href*='/book/'][href$='.html']:not([href*='/catalog/'])",
       "chapterName": "text",
       "chapterUrl": "href",
-      "nextTocUrl": "a:contains(下一页)@href||a:contains(尾页)@href"
+      "nextTocUrl": "a:contains(上一页)@href"
     },
     "searchUrl": "https://www.8leng.com/search/{{key}}",
     "weight": 0
