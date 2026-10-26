@@ -1,20 +1,17 @@
 [
   {
-    "bookSourceName": "西瓜书屋（公开规则改制）",
     "bookSourceGroup": "小说",
+    "bookSourceName": "西瓜书屋（公开规则改制）",
     "bookSourceType": 0,
     "bookSourceUrl": "https://www.xiguasw.com",
+    "customButton": false,
     "customOrder": 0,
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
+    "eventListener": false,
     "exploreUrl": "都市小说::https://www.xiguasw.com/shuku/0_0_0_{{page}}_0_3_0.html\n青春小说::https://www.xiguasw.com/shuku/0_0_0_{{page}}_0_4_0.html\n悬疑小说::https://www.xiguasw.com/shuku/0_0_0_{{page}}_0_5_0.html\n游戏竞技::https://www.xiguasw.com/shuku/0_0_0_{{page}}_0_6_0.html\n科幻小说::https://www.xiguasw.com/shuku/0_0_0_{{page}}_0_7_0.html\n架空历史::https://www.xiguasw.com/shuku/0_0_0_{{page}}_0_8_0.html\n东方玄幻::https://www.xiguasw.com/shuku/0_0_0_{{page}}_0_9_0.html\n更新作品::https://www.xiguasw.com/shuku/0_0_0_{{page}}_0_0_0.html\n全本作品::https://www.xiguasw.com/shuku/0_2_0_{{page}}_0_0_0.html\n热门作品::https://www.xiguasw.com/shuku/0_0_3_{{page}}_0_0_0.html\n我的书架::/user/",
-    "header": "{\n\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1788.0\"\n}",
     "lastUpdateTime": 1714807869352,
-    "loginCheckJs": "",
-    "loginUrl": "https://www.xiguasw.com/user/login.html",
-    "bookSourceComment": "基于公开收录的西瓜书屋书源规则整理。站点可能出现验证码；搜索频繁时可能需要验证。当前规则未经本会话实机导入测试。",
-    "concurrentRate": "1/10000",
     "respondTime": 180000,
     "ruleBookInfo": {
       "author": "id.info@p.0@text",
@@ -39,7 +36,6 @@
       "lastChapter": "class.s3@text",
       "name": "dl@dt@a@text||class.s2@text"
     },
-    "ruleReview": {},
     "ruleSearch": {
       "author": "class.s4@text",
       "bookList": "tag.li",
@@ -57,6 +53,7 @@
       "preUpdateJs": ""
     },
     "searchUrl": "/search/8g9.html,{\n\"method\": \"POST\",\n\"body\": \"keyword={{key}}\"\n}\n@js:java.put('key',key);result;",
-    "weight": 0
+    "weight": 0,
+    "header": "{\n\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1788.0\"\n}"
   }
 ]
